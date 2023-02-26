@@ -1,0 +1,7 @@
+.idea/
+src/.idea/
+target
+lib/
+Database Consoles/
+Extensions/
+TaskJDBC.iml
