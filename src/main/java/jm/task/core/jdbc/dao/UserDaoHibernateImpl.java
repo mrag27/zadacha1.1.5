@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
