@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
@@ -100,10 +101,10 @@ public class UserDaoHibernateImpl implements UserDao {
     @Override
     public void cleanUsersTable() {
         Transaction transaction = null;
-        String sql = "TRUNCATE TABLE User;";
+        String hql = "DELETE from User";
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            session.createSQLQuery(sql).executeUpdate();
+            session.createQuery(hql).executeUpdate();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {
